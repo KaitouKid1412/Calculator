@@ -1,1 +1,0 @@
-"FIrst javascript project, a basic calculator"
