@@ -1,0 +1,82 @@
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+		<script type="text/javascript">
+var memory="0";
+var current="0";
+var operator=0;
+
+function displaynum(dis)
+{
+	if(eval(current)==0)
+		current=dis;
+	else
+	current+=dis;
+	document.Calculate.Display.value=current;
+}
+function clearall()
+{
+	current="0";
+	memory="0";
+	operator=0;
+	document.Calculate.Display.value=current;
+}
+function operators(op)
+{
+	if(op=='+'){operator=1;}
+	if(op=='-'){operator=2;}
+	if(op=='*'){operator=3;}
+	if(op=='/'){operator=4;}
+	memory=current;
+	current="0";
+	document.Calculate.Display.value=current;
+}
+function calculate()
+{
+	if(operator==1){current=eval(current)+eval(memory);}
+	if(operator==2){current=eval(memory)-eval(current);}
+	if(operator==3){current=eval(current)*eval(memory);}
+	if(operator==4){current=eval(memory)/eval(current);}
+	document.Calculate.Display.value=current;
+	operatior=0;
+	memory="0";	
+}
+
+		</script>
+	</head>
+	
+	<body>
+	<form name="Calculate">
+			<table>
+				<tr><input id="submit" type="text" name="Display"></tr>
+				<tr>
+					<td><input class="buttons" type="button" name="result" value="=" onclick="calculate()"></td>
+				</tr>
+				<tr>
+					<td><input class="buttons" type="button" name="seven" value="7" onclick="displaynum('7')"></td>
+					<td><input class="buttons" type="button" name="eight" value="8" onclick="displaynum('8')"></td>
+					<td><input class="buttons" type="button" name="nine" value="9" onclick="displaynum('9')"></td>
+					<td><input class="buttons" type="button" name="plus" value="+" onclick="operators('+')"></td>
+				</tr>
+				<tr>
+					<td><input class="buttons" type="button" name="four" value="4" onclick="displaynum('4')"></td>
+					<td><input class="buttons" type="button" name="five" value="5" onclick="displaynum('5')"></td>
+					<td><input class="buttons" type="button" name="six" value="6" onclick="displaynum('6')"></td>
+					<td><input class="buttons" type="button" name="minus" value="-" onclick="operators('-')"></td>
+				</tr>
+				<tr>
+					<td><input class="buttons" type="button" name="one" value="1" onclick="displaynum('1')"></td>
+					<td><input class="buttons" type="button" name="two" value="2" onclick="displaynum('2')"></td>
+					<td><input class="buttons" type="button" name="three" value="3" onclick="displaynum('3')"></td>
+					<td><input class="buttons" type="button" name="multiplication" value="X" onclick="operators('*')"></td>
+				</tr>
+				<tr>
+					<td><input class="buttons" type="button" name="Clear" value='C' onclick="clearall()"></td>
+					<td><input class="buttons" type="button" name="zero" value="0" onclick="displaynum('0')"></td>
+					<td><input class="buttons" type="button" name="dot" value="." onclick="displaynum('.')"></td>
+					<td><input class="buttons" type="button" name="division" value="/" onclick="operators('/')"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

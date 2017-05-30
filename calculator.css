@@ -1,0 +1,29 @@
+*{
+	margin:0px;
+	padding:0px;
+	
+}
+.buttons{
+    background-color: rgb(153,250,250); 
+    padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    width:50px;
+    position:relative;
+    top:255px;
+    left:500px;
+}
+#submit{
+	position:relative;
+	top:297px;
+	left:557px;
+	width:145px;
+	height:35px;
+	border:5px solid blue; 
+}
+.calculate{
+	margin:2px;
+	border:2px solid red;
+	background color:green;
+}
